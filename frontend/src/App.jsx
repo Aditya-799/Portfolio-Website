@@ -34,7 +34,7 @@ function App(){
     if(formData.name==='' || formData.email==='' || formData.message===''){
       alert('Please fill all the fields')
     }else{
-      axios.post('http://localhost:5000/send-email',formData)
+      axios.post('https://portfolio-website-backend-cle3.onrender.com/send-email',formData)
       .then(res=>{
         alert('Email sent successfully')
       })
