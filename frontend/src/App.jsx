@@ -34,7 +34,7 @@ function App(){
     if(formData.name==='' || formData.email==='' || formData.message===''){
       alert('Please fill all the fields')
     }else{
-      axios.post('https://portfolio-website-backend-cle3.onrender.com/send-email',formData)
+      axios.post('http://localhost:5000/send-email',formData)
       .then(()=>{
         alert('Email sent successfully')
       })
@@ -50,8 +50,8 @@ function App(){
         <div className="top-section" id='top-section'>
           <h1 className="name role-style">Aditya Reddy</h1>
           <div className="menu-bar-container">
-          {isClicked===false ?<i class="fa-solid fa-bars menu-bar" onClick={menuClick}></i>:
-          <i class="fa-solid fa-xmark menu-bar" onClick={menuClick}></i>}
+          {isClicked===false ?<i className="fa-solid fa-bars menu-bar" onClick={menuClick}></i>:
+          <i className="fa-solid fa-xmark menu-bar" onClick={menuClick}></i>}
           </div>
           <div className="lg-menu-bar-container">
           <ul className="">
@@ -98,9 +98,9 @@ function App(){
               </p>
               <div className='button-container'>
               <button className='button-style download-button' onClick={downloadResume}>
-                <i class="fa-solid fa-file-lines in-icon"></i> My Resume
+                <i className="fa-solid fa-file-lines in-icon"></i> My Resume
               </button>
-              <button className='button-style View-project-button'><i class="fa-solid fa-code in-icon"></i> <a href="#projects-section" className='close-link button-color'>View Projects</a></button>
+              <button className='button-style View-project-button'><i className="fa-solid fa-code in-icon"></i> <a href="#projects-section" className='close-link button-color'>View Projects</a></button>
               </div>
           </div> 
           <div className='Skill-section' id='skill-section'>
@@ -214,6 +214,7 @@ function App(){
               <div className='contact-button-container'>
                 <button className='button-style contact-button download-button' onClick={sendEmail}>Send Message</button>
               </div>
+              <p style={{color:'white'}}>The Nodemailer is not working in the render due to blockage of smtp services.Connect via Linked In</p>
             </div>
             <div className='contact-prefer-linkedIn-container'>
               <h1 className='contact-prefer-linkedIn-heading role-style'>Prefer Linkedin?</h1>
